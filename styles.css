@@ -1,0 +1,231 @@
+:root {
+  /* Breakpoints */
+  --Breakpoint-mobile: 375px;
+  --Breakpoint-desktop: 1220px;
+
+  /* Colors */
+  --Text-color-very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Text-color-soft-red: hsl(14, 88%, 65%);
+
+  --Gradient-soft-violet: hsl(273, 75%, 66%);
+  --Gradient-Soft-blue: hsl(240, 73%, 65%);
+
+  --Text-very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Text-dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --Divider-color: hsl(240, 5%, 91%);
+
+  --Image-x-translation: 100px;
+
+  --Max-width-of-faq-box: 920px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  background: hsla(240, 73%, 65%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(240, 73%, 65%, 1) 0%,
+    hsla(273, 75%, 66%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(240, 73%, 65%, 1) 0%,
+    hsla(273, 75%, 66%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(240, 73%, 65%, 1) 0%,
+    hsla(273, 75%, 66%, 1) 100%
+  );
+
+  font-size: 12px;
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var(--Text-color-very-dark-desaturated-blue);
+}
+
+.faq-box {
+  position: relative;
+  max-width: var(--Max-width-of-faq-box);
+  background-color: white;
+  margin: 0 16px;
+
+  border-radius: 34px;
+  box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 34px;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+}
+
+.heroImage {
+  position: relative;
+
+  transform: translateX(calc(-1 * var(--Image-x-translation)));
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bg-illustration-mobile,
+#mobile-hero {
+  display: none;
+}
+
+#bg-illustration {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -30%);
+  z-index: -1;
+}
+
+#box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    calc(-1 * (var(--Max-width-of-faq-box) / 2) - 50%),
+    -35%
+  );
+  z-index: 1;
+}
+
+.faq {
+  transform: translateX(calc(-1 * var(--Image-x-translation)));
+  margin-left: 84px;
+  margin-top: 84px;
+  margin-bottom: 84px;
+  min-width: 270px;
+}
+
+.faq hr {
+  color: var(--Divider-color);
+  margin: 16px 0;
+}
+
+.faq-element {
+  color: var(--Text-dark-grayish-blue);
+  transition: 0.5s;
+}
+
+.faq-element .question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+.faq-element:hover .question {
+  color: var(--Text-color-soft-red) !important;
+}
+
+.faq-element[data-faq-state='closed'] .question {
+  font-weight: 400;
+}
+
+.faq-element[data-faq-state='opened'] .question {
+  margin-bottom: 16px;
+  color: var(--Text-color-very-dark-desaturated-blue);
+}
+
+.faq-element[data-faq-state='opened'] .question .arrow-indicator {
+  transform: rotate(180deg);
+}
+
+.faq-element[data-faq-state='closed'] .answer {
+  height: 0;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 920px) {
+  .faq-box {
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    padding: 24px;
+  }
+
+  .heroImage {
+    width: 75%;
+    transform: translateX(0px);
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    transform: translate(-50%, -55%);
+  }
+
+  .heroImage img {
+    width: 100%;
+  }
+
+  #bg-illustration,
+  #hero,
+  #box {
+    display: none;
+  }
+
+  #bg-illustration-mobile,
+  #mobile-hero {
+    display: block;
+  }
+
+  #bg-illustration-mobile {
+    position: absolute;
+    /* bottom: 0; */
+    transform: translateY(50%);
+  }
+
+  .faq {
+    transform: translate(0, 0);
+    margin: 0;
+    margin-top: 64px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 919px) {
+  .faq h1 {
+    margin-top: 84px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 16px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

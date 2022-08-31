@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <img src="./images/illustration-box-desktop.svg" alt="box" id="box" />
+    <div class="faq-box">
+      <div class="heroImage">
+        <!-- Desktop Images -->
+        <img
+          src="./images/bg-pattern-desktop.svg"
+          alt="Background Illustration"
+          id="bg-illustration"
+        />
+        <img
+          src="./images/illustration-woman-online-desktop.svg"
+          alt="illustration woman online"
+          id="hero"
+        />
+
+        <!-- Mobile Images -->
+        <img
+          src="./images/illustration-woman-online-mobile.svg"
+          alt="illustration woman online"
+          id="mobile-hero"
+        />
+
+        <img
+          src="./images/bg-pattern-mobile.svg"
+          alt="Background Illustration"
+          id="bg-illustration-mobile"
+        />
+      </div>
+
+      <div class="faq">
+        <h1>Faq</h1>
+
+        <div class="faq-element" data-faq-state="opened">
+          <h3 class="question">
+            How many team members can I invite?
+            <img
+              class="arrow-indicator"
+              src="./images/icon-arrow-down.svg"
+              alt="arrow"
+            />
+          </h3>
+          <p class="answer">
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="faq-element" data-faq-state="closed">
+          <h3 class="question">
+            What is the maximum file upload size?
+            <img
+              class="arrow-indicator"
+              src="./images/icon-arrow-down.svg"
+              alt="arrow"
+            />
+          </h3>
+          <p class="answer">
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="faq-element" data-faq-state="closed">
+          <h3 class="question">
+            How do I reset my password?
+            <img
+              class="arrow-indicator"
+              src="./images/icon-arrow-down.svg"
+              alt="arrow"
+            />
+          </h3>
+          <p class="answer">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="faq-element" data-faq-state="closed">
+          <h3 class="question">
+            Can I cancel my subscription?
+            <img
+              class="arrow-indicator"
+              src="./images/icon-arrow-down.svg"
+              alt="arrow"
+            />
+          </h3>
+          <p class="answer">
+            Yes! Send us a message and we’ll process your request no questions
+            asked.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="faq-element" data-faq-state="closed">
+          <h3 class="question">
+            Do you provide additional support?
+            <img
+              class="arrow-indicator"
+              src="./images/icon-arrow-down.svg"
+              alt="arrow"
+            />
+          </h3>
+          <p class="answer">
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
+          </p>
+        </div>
+
+        <hr />
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <script>
+      const faqElements = document.querySelectorAll('.faq-element');
+
+      faqElements.forEach((element, index) => {
+        element.addEventListener('click', () => {
+          const elementIndex = index;
+          const state = element.getAttribute('data-faq-state');
+          element.setAttribute(
+            'data-faq-state',
+            state === 'opened' ? 'closed' : 'opened'
+          );
+
+          /*
+          Logicially speaking, if the state is 'closed', that must mean the user is trying to open an faq element
+          If the user is trying to open, then every other faq element must be closed
+          */
+          if (state === 'closed') {
+            faqElements.forEach((elmnt, indx) => {
+              if (indx !== elementIndex) {
+                elmnt.setAttribute('data-faq-state', 'closed');
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

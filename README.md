@@ -6,6 +6,7 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 - [Frontend Mentor - FAQ accordion card solution](#frontend-mentor---faq-accordion-card-solution)
   - [Table of contents](#table-of-contents)
+  - [Youtube video](#youtube-video)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
@@ -17,6 +18,10 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
     - [What I learned](#what-i-learned)
     - [Useful resources](#useful-resources)
   - [Author](#author)
+
+## Youtube video
+
+[![YouTube video](./design/desktop-design.jpg)](https://youtu.be/ZBzUs55W0dE)
 
 ## Overview
 
@@ -116,7 +121,7 @@ faqElements.forEach((element, index) => {
 
 ### Useful resources
 
-- [Coolors Gradient Maker](https://coolors.co/gradient-maker/dcf180-f0cd97-35518a) - This helped me make the background gradient.
+- [Coolors Gradient Maker](https://coolors.co/gradient-maker/) - This helped me make the background gradient.
 
 ## Author
 

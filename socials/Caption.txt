@@ -1,0 +1,19 @@
+Live Site - https://thabeanboy.github.io/Front-End-Mentor-Faq-Accordion-/ 
+
+Repo - https://github.com/ThaBeanBoy/Front-End-Mentor-Faq-Accordion-
+
+Front End Mentor - https://www.frontendmentor.io/home
+
+Challenge - https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam
+
+HTML data attributes were useful in this project. I used them for faq elements to represent 2 states, namely 'closed' & 'opened'. It made styling the faq elements easy and editable. The data attributes were also useful in the Javascript portion because I could easily get the values of the data attributes and change them when necessary.
+
+One difficult thing in this challenge was positioning the faq and the hero image. In desktop mode, the hero image and the hero background were hidden when overflowing, but the box was not hidden when overflowing. In order to solve this, I placed the box image outside the box and had to position it properly.
+
+#webdesign
+#uidesign
+#figma
+#design
+#uidesigner
+#webdesigner
+#madewithcoolors
